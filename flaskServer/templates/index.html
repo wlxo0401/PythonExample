@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="text/html; charset=utf-8" http-equiv=Content-Type/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+        <meta name="theme-color" content="#317EFB"/>
+        <link rel="icon" type="image/x-icon" href="static/img/favicon.ico"/>
+        <link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.ico"/>
+        <link rel="apple-touch-icon" type="image/x-icon" href="static/img/favicon.ico"/>
+
+        <title>AMOA</title>
+        <style>
+            body { margin-top: 0px; margin-bottom:0px; margin-left:0px; margin-right:0px; }
+            .container { margin: 0px; padding: 0px; width: 100%; height: 100%; }
+            #canvas { left:0px; top:0px; width: 100%; height: 100%; display: block; padding:0em; }
+
+            #overlay_leftbottom {
+                position: absolute;
+                left: 10px;
+                bottom: 10px;
+                background-color: rgba(39, 44, 19, 0.596);
+                color: white;
+                font-family: monospace;
+                padding: 1em;
+            }
+            #overlay_rightmid {
+                position: absolute;
+                /* background-color: rgba(39, 44, 19, 0.596); */
+                color: white;
+                font-family: monospace;
+                top: 10px;        
+                right: 25px;
+                padding: 0.3em;
+            }
+            #overlay_leftmid {
+                position: absolute;
+                background-color: rgba(39, 44, 19, 0.596);
+                color: white;
+                font-family: monospace;
+                top: 63px;
+                bottom: 102px;
+                left: 10px;
+                padding: 0.3em;
+            }
+            #overlay_righttop {
+                position: absolute;
+                background-color: rgba(39, 44, 19, 0.596);
+                color: white;
+                font-family: monospace;
+                top: 63px;
+                bottom: 102px;
+                right: 10px;
+                padding: 0.3em;
+            }
+            #overlay_lefttop {
+                position: absolute;
+                /* background-color: rgba(39, 44, 19, 0.596); */
+                color: black;
+                font-family: monospace;
+                top: 10px;
+                left: 7px;
+                padding: 0em;
+            }
+        </style>
+
+        <script>
+            // for Init.
+            //-----------------------------------------------------------------------------------------------------------------
+            function _OnInitJS() {
+                console.log('>> start _OnInitJS()');
+                mapModule.setCenterFocus(127.045109, 37.542816, 4);
+                mapModule.setUseLastPos(false);
+                mapModule.setStylePostArea(2, 0.7, 5, 1, 92, 195, 255, 0, 70, 152);
+                console.log('<< end _OnInitJS()');
+            }
+            
+            function loadScriptSync (src) {
+                var s = document.createElement('script');
+                s.src = src;
+                s.type = "text/javascript";
+                s.async = false; // <-- this is important
+                document.getElementsByTagName('head')[0].appendChild(s);
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
+        </div>
+
+        <script type="text/javascript" src="static/lbsconfig.js"></script>
+        <script type="text/javascript" src="static/logimap-module-api.js"></script>
+        <script type="text/javascript" src="static/logimap-module-handler.js"></script>
+        <script type="text/javascript" src="static/map.js"></script>
+    </body>
+</html>
+
