@@ -1,4 +1,7 @@
 import socket
+
+
+
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect(("192.168.50.173", 8282))
 while 1:
