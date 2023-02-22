@@ -34,7 +34,7 @@ def threaded(client_socket, addr):
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
 server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 server_socket.bind(("", 8282))
-# server_socket.listen() 
+server_socket.listen() 
 
 print('server start')
 
@@ -46,7 +46,7 @@ while True:
     print('wait')
 
 
-    # client_socket, addr = server_socket.accept() 
+    client_socket, addr = server_socket.accept() 
     start_new_thread(threaded, (client_socket, addr)) 
 
 server_socket.close()
